@@ -1,18 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import Group from './Group';
 
-interface groupList {
-    title:string;
-}
-
 const GroupList = () => {
-    // const [groupList, setGroupList] = useState([
-    //     {
-    //         title : stirng;
-    //     },
-    // ])
+    interface groupList {
+        title:string;
+    }
 
-    groupList([
+    const [groupList, setGroupList] = useState([
         {
             title : "제목없음1"
         },
@@ -27,7 +21,8 @@ const GroupList = () => {
     return (
         <div>
             {groupList.map((listData) => {
-                <Group title={listData.title}/>
+                return <Group listInfo={listData}/>
+                // return <Group txt={"제목없음"}/>
             })}
         </div>
     )
